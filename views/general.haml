@@ -1,0 +1,30 @@
+%h2 General information
+%p
+  %span.name First name
+  #{@@cv['general']['firstname']}
+  %br
+  %span.name Family name
+  #{@@cv['general']['familyname']}
+  %br
+  %span.name Date of birth
+  #{@@cv['general']['dateOfBirth']}
+  %br
+  %span.name Place of birth
+  #{@@cv['general']['placeOfBirth']}
+  %br
+  %span.name Citizenship
+  #{@@cv['general']['citizenship']}
+  %br
+  %span.name Gender
+  #{@@cv['general']['gender']}
+  %br
+  %span.name Marital status
+  #{@@cv['general']['maritalStatus']}
+
+%h2 Current Affiliation
+%ul
+  - @@cv['general']['currentAffiliation'].each do |ca|
+    %li
+      - ca.each do |key,value|
+        %span.name #{key}
+        #{value}<br>

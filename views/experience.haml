@@ -1,0 +1,11 @@
+%h2 Work experience
+- @@cv['experience'].each do |section|
+  - unless section['title'].nil?
+    %h2= section['title']
+  %ul
+    - section['entries'].each do |exp|
+      %li
+        - exp.each do |key, value|
+          %span.name #{key}
+          =value
+          %br

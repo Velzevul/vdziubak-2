@@ -1,0 +1,8 @@
+%h2 Education
+%ul
+  - @@cv['education'].each do |ed|
+    %li
+      - ed.each do |key, value|
+        %span.name #{key}
+        =value
+        %br
