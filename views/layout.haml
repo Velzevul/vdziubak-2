@@ -45,5 +45,18 @@
         %p= @@welcome['p2']
         %p= @@welcome['p3']
     %section#portfolio.st-panel.right1
+      %div
+        #web-album.album
+          %img.thumb{:src => @@prefix + @@albums['web']['folder'] + @@albums['web']['thumb'] + '.gif', :alt => @@albums['web']['alt']}
+          %p= @@albums['web']['description']
+        #3d-album.album
+          %img.thumb{:src => @@prefix + @@albums['3d']['folder'] + @@albums['3d']['thumb'] + '.gif', :alt => @@albums['3d']['alt']}
+          %p= @@albums['3d']['description']
+        #photos-album.album
+          %img.thumb{:src => @@prefix + @@albums['photos']['folder'] + @@albums['photos']['thumb'] + '.gif', :alt => @@albums['photos']['alt']}
+          %p= @@albums['photos']['description']
+        #travel-album.album
+          %img.thumb{:src => @@prefix + @@albums['travel']['folder'] + @@albums['travel']['thumb'] + '.gif', :alt => @@albums['travel']['alt']}
+          %p= @@albums['travel']['description']
     / background
     %img#bg{:src => "images/bg.jpg", :alt => "background image"}

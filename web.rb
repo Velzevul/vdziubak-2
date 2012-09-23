@@ -2,13 +2,16 @@ require 'sinatra'
 require 'open-uri'
 require 'yaml'
 
-cv_yaml_link = 'https://dl.dropbox.com/u/102253740/cv.yaml'
-welcome_yaml_link = 'https://dl.dropbox.com/u/102253740/homepage.yaml'
+# set the url of my dropbox public folder
+configure do
+  @@prefix = 'https://dl.dropbox.com/u/102253740/'
+end
 
 # renders main information + cv 'general' section
 get '/' do
-  @@cv = YAML.parse( open(cv_yaml_link) ).to_ruby
-  @@welcome = YAML.parse( open(welcome_yaml_link) ).to_ruby
+  @@cv = YAML.parse( open( @@prefix + 'cv.yaml') ).to_ruby
+  @@welcome = YAML.parse( open( @@prefix + 'homepage.yaml') ).to_ruby
+  @@albums = YAML.parse( open( @@prefix + 'albums.yaml') ).to_ruby
   haml :general
 end
 

@@ -252,3 +252,39 @@ span.name{
 span.name:after{
   content:':';
 }
+
+#portfolio > div{
+  background: rgba(0, 0, 0, 0.9);
+  color: whiteSmoke;
+  position: absolute;
+  bottom: 3%;
+  right: 2%;
+  width: 96%;
+  overflow:hidden;
+}
+
+.album{
+  width:20%;
+  margin: 2.5%;
+  float:left;
+  text-align:center;
+}
+
+/*.album{
+  width:30.333%;
+  height:90%;
+  margin:0 1.5%;
+  float:left;
+  background:url('../images/facebook.png') center center no-repeat;
+
+}*/
+
+.album p{
+  display: block;
+  padding: 2.5%;
+}
+
+.thumb {
+  border-radius: 10px;
+  margin-top: 5%;
+}
