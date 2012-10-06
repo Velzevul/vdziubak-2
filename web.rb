@@ -4,7 +4,7 @@ require 'yaml'
 
 # set the url of my dropbox public folder
 configure do
-  @@prefix = 'https://dl.dropbox.com/u/102253740/'
+  @@prefix = 'https://dl.dropbox.com/u/102253740/vdziubak/'
 end
 
 # renders main information + cv 'general' section

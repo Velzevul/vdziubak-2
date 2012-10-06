@@ -186,10 +186,9 @@ a#skype{
   background: rgba(0, 0, 0, 0.9);
   color: whiteSmoke;
   position: absolute;
-  bottom: 3%;
-  right: 2%;
   width: 96%;
-  height:90%;
+  margin: 3em 2%;
+  height:85%;
 }
 
 #cv .menu{
@@ -257,9 +256,8 @@ span.name:after{
   background: rgba(0, 0, 0, 0.9);
   color: whiteSmoke;
   position: absolute;
-  bottom: 3%;
-  right: 2%;
   width: 96%;
+  margin: 3em 2%;
   overflow:hidden;
 }
 
