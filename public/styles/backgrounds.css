@@ -1,0 +1,51 @@
+/* CSS Document */
+body{
+  background:#000;
+}
+
+header{
+	background-color:#333333;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.8);
+}
+
+#mail{
+  background:url('/images/mail.png');
+  background-size:100% 100%;
+}
+
+#facebook{
+  background:url('/images/facebook.png');
+  background-size:100% 100%;
+}
+
+#google-plus{
+  background:url('/images/google-plus.png');
+  background-size:100% 100%;
+}
+
+#skype{
+  background:url('/images/skype.png');
+  background-size:100% 100%;
+}
+
+section{
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+}
+
+.portfolio-image div {
+  background:rgba(0,0,0,0.9);
+}
+
+a.colorbox-image {
+  background:url('/images/expand.png');
+  background-size:100% 100%;
+}
+
+.bgheight {
+  height:100%;
+}
+
+.bgwidth {
+  width:100%;
+}

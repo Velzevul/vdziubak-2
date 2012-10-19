@@ -1,62 +1,26 @@
 !!!
 %html
   %head
+    %meta{:content => "Homepage of Volodymyr Dziubak", :name => "description"}
+    %meta{:content => "VDziubak,Volodymyr,Dziubak,DVR,Web developer", :name => "keywords"}
+    %meta{:content => "Volodymyr Dziubak", :name => "author"}
+    %meta{:charset => "UTF-8"}
     %title Volodymyr Dziubak
-    %link{:href => "css/reset.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "css/font.css", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "css/layout.css", :rel => "stylesheet", :type => "text/css"}/
-    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", :type => "text/javascript"}
-    %script{:src => "scripts/main.js", :type => "text/javascript"}
-    / for custom scrollbar
-    %link{:href => "css/scrollbar.css", :rel => "stylesheet", :type => "text/css"}/
-    %script{:src => "scripts/jquery.mousewheel.js", :type => "text/javascript"}
-    %script{:src => "scripts/jquery.jscrollpane.min.js", :type => "text/javascript"}
-    / font resize event handler
-    %script{:src => "scripts/jquery.onfontresize.js", :type => "text/javascript"}
-
+    %link{:href => "/styles/layout.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js", :type => "text/javascript"}
+    %script{:src => "/scripts/main.js"}
   %body
-    / header
-    #topbar
-      #sitename Volodymyr Dziubak
-      / menu
-      %span#switch-1 Curicculum Vitae
-      %span#switch-2.active Welcome
-      %span#switch-3 Portfolio
-      %a#mail{:href => ""}
-      %a#google-plus{:href => ""}
-      %a#skype{:href => ""}
-      %a#facebook{:href => ""}
-    / content
-    %section#cv.st-panel.left1
-      %div
-        .menu
-          %a#general.active General
-          %a#education Education
-          %a#experience Experience
-          %a#awards Awards
-          %a#skills Skills
-          %a#interests Interests
-          %a#publications Publications
-        .content.custom-scrollbar
-          =yield
-    %section#home.st-panel.center
-      %div
-        %p= @@welcome['p1']
-        %p= @@welcome['p2']
-        %p= @@welcome['p3']
-    %section#portfolio.st-panel.right1
-      %div
-        #web-album.album
-          %img.thumb{:src => @@prefix + @@albums['web']['folder'] + @@albums['web']['thumb'] + '.gif', :alt => @@albums['web']['alt']}
-          %p= @@albums['web']['description']
-        #3d-album.album
-          %img.thumb{:src => @@prefix + @@albums['3d']['folder'] + @@albums['3d']['thumb'] + '.gif', :alt => @@albums['3d']['alt']}
-          %p= @@albums['3d']['description']
-        #photos-album.album
-          %img.thumb{:src => @@prefix + @@albums['photos']['folder'] + @@albums['photos']['thumb'] + '.gif', :alt => @@albums['photos']['alt']}
-          %p= @@albums['photos']['description']
-        #travel-album.album
-          %img.thumb{:src => @@prefix + @@albums['travel']['folder'] + @@albums['travel']['thumb'] + '.gif', :alt => @@albums['travel']['alt']}
-          %p= @@albums['travel']['description']
-    / background
-    %img#bg{:src => "images/bg.jpg", :alt => "background image"}
+    %header
+      %h1 Volodymyr Dziubak
+      #contacts
+        %a#mail{:href => ""}
+        %a#google-plus{:href => ""}
+        %a#skype{:href => ""}
+        %a#facebook{:href => ""}
+    %nav
+      %a#switch-1{:href => "/cv"} Curicculum Vitae
+      %a#switch-2.active{:href => "/"} Welcome
+      %a#switch-3{:href => "/portfolio"} Portfolio
+    #content
+      =yield
+    %img#bg{:src => "/images/bg.jpg"}

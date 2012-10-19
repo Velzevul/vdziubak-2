@@ -1,0 +1,221 @@
+/* CSS Document */
+/* for mobile devices */
+
+article {
+  overflow:hidden;
+}
+
+section {
+  margin: 2%;
+  padding: 1em;
+}
+
+header {
+  height:4.7em;
+}
+
+h1 {
+  display:block;
+  text-align:center;
+  margin:0.45em 0 0 0;
+}
+
+#contacts {
+  width: 10em;
+  margin: 0 auto;
+}
+
+/* fix for IE9 who does not understand width:initial */
+@media only screen and (max-width: 490px) {
+  h1 {
+    width:100%;
+  }
+}
+
+/* fix for IE9 who does not understand width:initial */
+@media only screen and (max-width: 812px) {
+  nav {
+    width:100%;
+  }
+}
+
+nav a {
+  display:block;
+  text-align: center;
+  background:#333;
+  border-radius:10px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.9);
+  margin:2%;
+  padding: 0.5em;
+}
+
+#content > div {
+  margin:1%;
+}
+
+/* for tablets */
+/* fix for IE9 who does not understand width:initial */
+@media only screen and (max-width: 812px) and (min-width: 491px) {
+  nav a {
+    width: 29%;
+  }
+}
+
+@media only screen and (min-width: 491px) {
+
+  #content > div {
+    margin-top:3.5em;
+  }
+
+  header {
+    height:2.5em;
+  }
+
+  h1 {
+    float: left;
+    width: initial;
+    margin:0.45em 0 0 0.5em;
+  }
+
+  #contacts {
+    float:right;
+  }
+
+  nav a {
+    float:left;
+    margin: 0 2.165%;
+    padding: 0.5em 0;
+    float: left;
+    border-radius:15px;
+  }
+
+  article {
+    margin-top: 3.5em;
+  }
+
+  section {
+    width: 43%;
+    float: left;
+    padding: 2%;
+    margin: 1.5%;
+  }
+
+  section:first-of-type {
+    margin-left:51.5%;
+  }
+
+  section:nth-child(2) {
+    clear:both;
+  }
+}
+
+/* for desktops */
+@media only screen and (min-width: 813px) {
+
+  #content > div {
+    margin-top:3em;
+  }
+
+  nav a{
+    margin:0 1.5em;
+    float:none;
+    padding:0;
+    background:none;
+    border-radius:none;
+    box-shadow: none;
+  }
+
+  header{
+    position:fixed;
+    left:0;
+    top:0;
+    height:2.5em;
+    z-index:100;
+  }
+
+  nav {
+    top: 0;
+    position:fixed;
+    z-index:200;
+    left: 13.5em;
+    width:initial;
+  }
+
+  nav a {
+    width:initial;
+    float:left;
+  }
+
+  article {
+    position:absolute;
+    bottom:0;
+  }
+
+  section {
+    width: 27%;
+    float: left;
+    padding: 1.5%;
+    margin: 1.665%;
+  }
+
+  section:first-of-type {
+    margin-left:1.665%;
+  }
+
+  section:nth-child(2) {
+    clear:none;
+  }
+}
+
+/* for big displays */
+@media only screen and (min-width: 1200px) {
+  section {
+    width: 19%;
+    padding: 1.5%;
+    margin: 1.2%;
+    display: block;
+    float: left;
+  }
+
+  section:first-of-type{
+    margin-left:26.8%;
+  }
+
+  ul {
+    -moz-column-count:2; /* Firefox */
+    -webkit-column-count:2; /* Safari and Chrome */
+    -o-column-count:2;
+    column-count:2;
+  }
+}
+
+/* gallery */
+
+/* 1-col */
+
+.portfolio-image {
+  width:90%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom:5%;
+}
+
+/* 2-col */
+@media only screen and (min-width:625px) {
+  .portfolio-image {
+    width:46%;
+    margin-left:2%;
+    margin-right:2%;
+    margin-bottom:2%;
+  }
+}
+
+/* 3-col */
+@media only screen and (min-width:1200px) {
+  .portfolio-image {
+    width:30%;
+    margin-left:1.6665%;
+    margin-right:1.6665%;
+    margin-bottom:1.6665%;
+  }
+}

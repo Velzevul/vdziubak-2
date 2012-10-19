@@ -7,46 +7,28 @@ configure do
   @@prefix = 'https://dl.dropbox.com/u/102253740/vdziubak/'
 end
 
+not_found do
+  "404 not found... sorry =("
+end
+
 # renders main information + cv 'general' section
 get '/' do
-  @@cv = YAML.parse( open( @@prefix + 'cv.yaml') ).to_ruby
-  @@welcome = YAML.parse( open( @@prefix + 'homepage.yaml') ).to_ruby
-  @@albums = YAML.parse( open( @@prefix + 'albums.yaml') ).to_ruby
-  haml :general
+  if request.xhr?
+    haml :welcome, :layout => false
+  else
+    @@cv = YAML.parse( open( @@prefix + 'cv.yaml') ).to_ruby
+    @@info = YAML.parse( open( @@prefix + 'homepage.yaml') ).to_ruby
+    haml :welcome
+  end
 end
 
-# ajax-only, loads the necessary section of cv file
-get '/general' do
+# ajax-only, loads the necessary data
+get '/cv' do
   pass unless request.xhr?
-  haml :general, :layout => false
+  haml :cv, :layout => false
 end
 
-get '/education' do
+get '/portfolio' do
   pass unless request.xhr?
-  haml :education, :layout => false
-end
-
-get '/experience' do
-  pass unless request.xhr?
-  haml :experience, :layout => false
-end
-
-get '/awards' do
-  pass unless request.xhr?
-  haml :awards, :layout => false
-end
-
-get '/skills' do
-  pass unless request.xhr?
-  haml :skills, :layout => false
-end
-
-get '/interests' do
-  pass unless request.xhr?
-  haml :interests, :layout => false
-end
-
-get '/publications' do
-  pass unless request.xhr?
-  haml :publications, :layout => false
+  haml :portfolio, :layout => false
 end
