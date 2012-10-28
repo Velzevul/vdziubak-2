@@ -1,0 +1,11 @@
+%div
+  - @@info['albums'].each do |album|
+    %h3= album['title']
+    - album['photos'].each do |photo|
+      .portfolio-image
+        %img{:src => "/portfolio/" + album['folder'] + "th_" + photo['file'] + ".jpg"}
+          %div
+            - unless photo['url'].nil?
+              %a.sitelink{:href => photo['url']}= photo['url']
+            %a.colorbox-image{:href => "/portfolio/" + album['folder'] + photo['file'] + ".jpg",:title => photo['title']}
+            %p= photo['description']

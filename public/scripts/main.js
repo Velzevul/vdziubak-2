@@ -41,7 +41,7 @@ $(document).ready(function(){
       $.get($(this).attr('href'), function(data){
         $('#content').fadeOut(function(){
           $(this).html(data);
-          //$('.colorbox-image').colorbox({rel:'gallery', maxHeight:'90%'});
+          $('.colorbox-image').colorbox({rel:'gallery', maxHeight:'90%', maxWidth:'90%'});
           $(this).fadeIn();
         });
       });
