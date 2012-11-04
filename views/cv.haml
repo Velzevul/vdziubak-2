@@ -8,32 +8,32 @@
     %a{:href => "#publications"} Publications
     %a{:href => "#skills"} Skills
     %a{:href => "#interests"} Interests
-  %h3#general General Information
+  %h3#general.top-offset General Information
   %ul
     %li <strong>Full Name</strong>: #{@@cv['general']['firstname']} #{@@cv['general']['familyname']}
     %li <strong>Birth</strong>: #{@@cv['general']['dateOfBirth']}, #{@@cv['general']['placeOfBirth']}
     %li <strong>Citizenship</strong>: #{@@cv['general']['citizenship']}
     %li <strong>Marital Status</strong>: #{@@cv['general']['maritalStatus']}
     %li <strong>Gender</strong>: #{@@cv['general']['gender']}
-  %h3#current Current Affiliation
+  %h3#current.top-offset Current Affiliation
   %ul
     - @@cv['general']['currentAffiliation'].each do |entry|
       %li
         - entry.each do |key, value|
           <strong>#{key}:</strong> #{value}<br>
-  %h3#education Education
+  %h3#education.top-offset Education
   %ul
     - @@cv['education'].each do |entry|
       %li
         - entry.each do |key, value|
           <strong>#{key}:</strong> #{value}<br>
-  %h3#awards Awards
+  %h3#awards.top-offset Awards
   %ul
     - @@cv['awards'].each do |entry|
       %li
         - entry.each do |key, value|
           <strong>#{key}:</strong> #{value}<br>
-  %h3#experience Experience
+  %h3#experience.top-offset Experience
   - @@cv['experience'].each do |group|
     = '<h4>' + group['title'] + '</h4>' unless group['title'].nil?
     %ul
@@ -41,15 +41,15 @@
         %li
           - entry.each do |key,value|
             <strong>#{key}:</strong> #{value}<br>
-  %h3#publications Publications
+  %h3#publications.top-offset Publications
   %ul
     - @@cv['publications'].each do |entry|
       %li #{entry}<br>
-  %h3#skills Skills
+  %h3#skills.top-offset Skills
   %ul
     - @@cv['skills'].each do |entry|
       %li <strong>#{entry['title']}</strong>: #{entry['description']}<br>
-  %h3#interests Interests
+  %h3#interests.top-offset Interests
   %ul
     - @@cv['interests'].each do |entry|
       %li
