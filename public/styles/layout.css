@@ -46,7 +46,7 @@ nav a:hover {
 }
 
 #content > div h3 {
-  padding:0.8em;
+  padding:2.5em 0.8em 1em 0.8em;
   font-size:1.3em;
   padding-left:2em;
   clear:both;
@@ -127,6 +127,7 @@ ul {
   list-style-position: outside;
   padding-left:1.5em;
   padding-right:1em;
+  line-height: 1.4em;
 }
 
 #content > div ul:last-of-type {

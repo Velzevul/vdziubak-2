@@ -4,7 +4,6 @@ var images = ['bg.jpg', 'bg-2.jpg', 'bg-3.jpg', 'bg-4.jpg', 'bg-5.jpg'];
 setInterval(function(){
   var random_no;
   $('#bg').fadeOut('normal', function(){
-    random_no = Math.floor(images.length*Math.random());
     do{
       random_no = Math.floor(images.length*Math.random());
     }while('images/' + images[random_no] == $(this).attr('src'))
