@@ -99,13 +99,14 @@
   display: block;
 }
 
-img.bgwidth {
+img#bg.bgwidth {
   max-width:100%;
+  max-height:inherit;
 }
 
-img.bgheight {
+img#bg.bgheight {
   max-height:100%;
-  max-width:initial;
+  max-width:inherit;
 }
 
 header{
