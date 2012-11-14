@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
+  setRowsHeight();
+
   // initialize
-  resizeBg(); // resize background
-  setRowHeight();
-  $('#bg').fadeIn(800); // fadeIn background for homepage
+  $('#bg').load(function(){
+    resizeBg(); // resize background
+  });
   
   function resizeBg() {
     var bgimg = $('#bg');
@@ -15,7 +17,7 @@ $(document).ready(function(){
     }
   };
   
-  function setRowHeight() {
+  function setRowsHeight() {
     //for large displays, set heights of rows to 28% of screen height
     var wh = $(window).height();
     $(".one-row").each(function(i){
@@ -40,13 +42,16 @@ $(document).ready(function(){
   // resize if window is changed
   $(window).resize(function(){
     resizeBg();
-    setRowHeight();
+    setRowsHeight();
   });
 
   $('.carousel').carousel({
     interval: false
   })
 
-  $('.colorbox').colorbox({maxHeight:'90%', maxWidth:'90%'});
+  $('.colorbox').colorbox({
+    maxHeight:'90%', 
+    maxWidth:'90%'
+  });
 
 });
