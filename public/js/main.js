@@ -47,8 +47,6 @@ $(document).ready(function(){
     interval: false
   })
 
-  $('.carousel').carousel(function(event){
-    alert(event);
-  });
+  $('.colorbox').colorbox({maxHeight:'90%', maxWidth:'90%'});
 
 });
