@@ -19,7 +19,7 @@ $(document).ready(function(){
     //for large displays, set heights of rows to 28% of screen height
     var wh = $(window).height();
     $(".one-row").each(function(i){
-      if ($(this).height('auto').innerHeight() <= wh*0.28){
+      if ($(this).children('p').length == 0 || $(this).height('auto').innerHeight() <= wh*0.28){
         $(this).innerHeight(wh*0.28)
       }
       else{
@@ -28,7 +28,7 @@ $(document).ready(function(){
     });
     
     $(".two-rows").each(function(i){
-      if ($(this).height('auto').innerHeight() <= wh*0.56 + 10){
+      if ($(this).children('p, h2, h3').length == 0 || $(this).height('auto').innerHeight() <= wh*0.56 + 10){
         $(this).innerHeight(wh*0.56 + 10)
       }
       else{
