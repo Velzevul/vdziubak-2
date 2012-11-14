@@ -1,0 +1,54 @@
+$(document).ready(function(){
+
+  // initialize
+  resizeBg(); // resize background
+  setRowHeight();
+  $('#bg').fadeIn(800); // fadeIn background for homepage
+  
+  function resizeBg() {
+    var bgimg = $('#bg');
+    var aspectRatio = bgimg.width() / bgimg.height();
+    if ( ($(window).width() / $(window).height()) <= aspectRatio ) {
+      bgimg.removeClass('bgheight bgwidth').addClass('bgheight');
+    } else {
+      bgimg.removeClass('bgheight bgwidth').addClass('bgwidth');
+    }
+  };
+  
+  function setRowHeight() {
+    //for large displays, set heights of rows to 28% of screen height
+    var wh = $(window).height();
+    $(".one-row").each(function(i){
+      if ($(this).height('auto').innerHeight() <= wh*0.28){
+        $(this).innerHeight(wh*0.28)
+      }
+      else{
+        $(this).height("auto")
+      }
+    });
+    
+    $(".two-rows").each(function(i){
+      if ($(this).height('auto').innerHeight() <= wh*0.56 + 10){
+        $(this).innerHeight(wh*0.56 + 10)
+      }
+      else{
+        $(this).height("auto")
+      }
+    });
+  };
+
+  // resize if window is changed
+  $(window).resize(function(){
+    resizeBg();
+    setRowHeight();
+  });
+
+  $('.carousel').carousel({
+    interval: false
+  })
+
+  $('.carousel').carousel(function(event){
+    alert(event);
+  });
+
+});

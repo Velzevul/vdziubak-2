@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Volodymyr Dziubak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Homepage of Volodymyr Dziubak">
+  <meta name="keywords" content="VDziubak,Volodymyr,Dziubak,DVR,Web developer">
+  <meta name="author" content="Volodymyr Dziubak">
+  <meta charset="UTF-8">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/main.js"></script>
+  <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+  <link href="/css/my-styles.css" rel="stylesheet" media="screen">
+</head>
+<body>
+  
+  <header>
+    <h1> Volodymyr Dziubak </h1>    
+    <div id="contacts">
+      <a href="" id="mail"></a>
+      <a href="" id="google-plus"></a>
+      <a href="" id="skype"></a>
+      <a href="" id="facebook"></a>
+    </div>
+  </header>
+
+  <div class='container-fluid'>
+
+    <div id="main-slider" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+
+        <!-- Front page -->
+        <section class="active item">
+          <div class='row-fluid wide centered'>
+            <!-- first panel -->
+            <div class='span5 offset2 two-rows'>
+              <h3 class='page-header'>
+                Who am I?<small class='right-aligned separate right-aligned'>few words about my humble person</small>
+              </h3>
+              <p>I am a freelance web developer & designer.</p>
+              <p>Apart from that, I am also a Master student at the National University of Kyiv-Mohyla Academy in Ukraine, where i am studying at the "Systems and Methods of  Decision-Making" program. </p>
+              <p>Earlier in 2011, I have obtained my Bachelor's degree with horors in Applied Mathematics there, and during my undegraduate studies I was a part of the university web development team.</p>
+            </div>
+            <!-- second column of panels -->
+            <div class='span5'>
+              <!-- first row -->
+              <div class='row-fluid'>
+                <div class='span12 one-row'>
+                  <h4 class='page-header'>What I do?</h4>
+                  <p>I design websites, I create mockups, I implement them using various web frameworks.</p>
+                  <p>How I do it? The formula is simple:</p>
+                </div>
+              </div>
+              <!-- second row -->
+              <div class='row-fluid' id='test'>
+                <div class='span6 one-row'>
+                  <img src='img/html-css.png' />
+                  <p>just take pretty solid knowledge of HTML and CSS</p>
+                </div>
+                <div class='span6 one-row' id='mockup-frameworks'>
+                  <img src='img/bootstrap-foundation.png' />
+                  <p>wrap it around with frameworks, like Twitter Bootstrap, Zurb Foundation</p>
+                </div>
+              </div>
+              <!-- third row -->
+              <div class='row-fluid'>
+                <div class='span6 one-row'>
+                  <img src='img/jquery.png' />
+                  <p>add some knowlerdge of Javascript & JQuery, skills in responsive web development</p>
+                </div>
+                <div class='span6 one-row'>
+                  <img src='img/ror-sinatra-drupal.png' />
+                  <p>and plug it all into a CMS (Joomla, Drupal) or framework (Ruby On Rails, Sinatra)</p>
+                </div>
+              </div>
+              <!-- end rows -->
+            </div>
+            <!-- end columns -->
+          </div>
+        </section>
+
+        <% @portfolio.each_with_index do |row,num| %>
+          <% if num%3 == 0 %>
+            <% if num != 0 %>
+              </section>    
+              <!-- end of page -->
+            <% end %>
+            <!-- portfolio page -->
+            <section class="item">
+          <% end %>
+
+            <!-- new row -->
+            <div class='row-fluid centered narrow'>   
+              <% skip = 0 #variable to store number of skipped elements %>
+
+              <% unless row['first'].nil? # empty record? %> 
+                <% if row['first'] == "skip"  # intentionally blank record? %>
+                  <% skip += 1 # increase number of skips %>
+                <% else # show normal record%>
+                  <div class='span3 one-row image-wrapper'>
+                    <%= row['first'] %>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless row['second'].nil? %> 
+                <% if row['second'] == "skip"  # intentionally blank record? %>
+                  <% skip += 1 # increase number of skips %>
+                <% else # show normal record%>
+                  <div class='span3 one-row image-wrapper <%= "offset#{skip*3}" %>'>
+                    <%= row['second'] %>
+                    <% skip = 0 # make zero skips - we have just used all of them %>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless row['third'].nil? %> 
+                <% if row['third'] == "skip"  # intentionally blank record? %>
+                  <% skip += 1 # increase number of skips %>
+                <% else # show normal record%>
+                  <div class='span3 one-row image-wrapper <%= "offset#{skip*3}" %>'>
+                    <%= row['third'] %>
+                    <% skip = 0 # make zero skips - we have just used all of them %>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <% unless row['fourth'].nil? %> 
+                <% if row['fourth'] == "skip"  # intentionally blank record? %>
+                  <% skip += 1 # increase number of skips %>
+                <% else # show normal record%>
+                  <div class='span3 one-row image-wrapper <%= "offset#{skip*3}" %>'>
+                    <%= row['fourth'] %>
+                    <% skip = 0 # make zero skips - we have just used all of them %>
+                  </div>
+                <% end %>
+              <% end %>
+
+            </div>
+            <!-- end of row -->
+        
+        <% end %>
+
+        </section>    
+        <!-- end of page -->
+
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#main-slider" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#main-slider" data-slide="next">&rsaquo;</a>
+    </div>
+
+  </div>
+
+  <img id="bg" src="img/bg.jpg">
+</body>
+</html>
